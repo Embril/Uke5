@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stein, saks papir</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script>
+      //model
+      var inex = 'Vinneren er:';
+      var istone = '👊';
+      var ipaper = '✋';
+      var iscissor = '✌';
+      var computerChoice = ' ';
+      var player1 = ' ';
+
+      //view
+      Show();
+      function Show() {
+        app.innerHTML = `
+              <div class="container">
+
+                      <div class="player1container">
+                          <div class="player1head">Player 1</div></br>
+                          <div id="player1result">${player1}</div>
+                      </div>
+
+                      <div class="knappe-container">
+                          <div class="knapper">
+                              <button class="stein1" onclick="valg(this); ">👊</button>
+                              <button class="saks1" onclick="valg(this); ">✌</button>
+                              <button class="papir1" onclick="valg(this); ">✋</button>
+                              <button class="random" onclick="random1();">🔀</button>
+                          </div>
+                      </div>
+
+                      <div class="CPUcontainer">
+                          <div class="CPUhead">CPU</div></br>
+                          <div id="CPUresult">${computerChoice}</div>
+                      </div>
+
+                  <div class="result">
+                      <div id="result1">${inex}</div>
+                  </div>
+              <div>`;
+      }
+
+      //controller
+
+      function Winner() {
+        if (
+          (computerChoice === '👊' && player1 === '✋') ||
+          (computerChoice === '✌' && player1 === '👊') ||
+          (computerChoice === '✋' && player1 === '✌')
+        ) {
+          inex = 'Player 1 Wins!';
+        }
+        if (
+          (computerChoice === '👊' && player1 === '✌') ||
+          (computerChoice === '✌' && player1 === '✋') ||
+          (computerChoice === '✋' && player1 === '👊')
+        ) {
+          inex = 'CPU Wins!';
+        }
+
+        if (
+          (computerChoice === '✋' && player1 === '✋') ||
+          (computerChoice === '✌' && player1 === '✌') ||
+          (computerChoice === '👊' && player1 === '👊')
+        ) {
+          inex = "It's a tie!";
+        }
+      }
+
+      function valg(that) {
+        var i = Math.random();
+        if (i < 0.34) {
+          computerChoice = istone;
+        } else if (i <= 0.67) {
+          computerChoice = ipaper;
+        } else {
+          computerChoice = iscissor;
+        }
+        CPUresult.innerHTML = computerChoice;
+        player1 = that.innerHTML;
+        Winner();
+        Show();
+      }
+
+      function random1() {
+        var i = Math.random();
+        if (i < 0.34) {
+          computerChoice = istone;
+        } else if (i <= 0.67) {
+          computerChoice = ipaper;
+        } else {
+          computerChoice = iscissor;
+        }
+        random2();
+        Winner();
+        Show();
+      }
+      function random2() {
+        var i = Math.random();
+        if (i < 0.34) {
+          player1 = istone;
+        } else if (i <= 0.67) {
+          player1 = ipaper;
+        } else {
+          player1 = iscissor;
+        }
+      }
+    </script>
+  </body>
+</html>

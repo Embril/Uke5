@@ -1,0 +1,80 @@
+.container {
+  width: 900px;
+  height: 600px;
+  border: solid white 2px;
+  margin-left: 500px;
+  margin-top: 200px;
+  color: white;
+}
+
+.player1container {
+  width: 270px;
+  height: 300px;
+  border: solid white 2px;
+  margin: 20px;
+  float: right;
+  padding-top: 20px;
+  font-size: xx-large;
+  text-align: center;
+}
+
+.player1head {
+  text-align: center;
+  font-size: xx-large;
+}
+
+#player1result {
+  font-size: 250%;
+}
+
+.CPUcontainer {
+  width: 270px;
+  height: 300px;
+  border: solid white 2px;
+  margin: 20px;
+  text-align: center;
+  padding-top: 20px;
+  font-size: xx-large;
+}
+#CPUresult {
+  font-size: 250%;
+}
+.CPUhead {
+  text-align: center;
+  font-size: xx-large;
+}
+
+.knappe-container {
+  padding-right: 10px;
+  padding-top: 280px;
+  float: right;
+}
+
+button {
+  border: 0.15em solid gray;
+  width: 60px;
+  height: 60px;
+  font-size: xx-large;
+  text-align: center;
+}
+knapper:hover {
+  border-color: #7a7a7a;
+}
+
+.result {
+  width: 800px;
+  height: 150px;
+  border: solid white 2px;
+  margin-left: 50px;
+  text-align: center;
+  color: aliceblue;
+}
+
+body {
+  background-color: rgb(0, 0, 0);
+}
+
+#result1 {
+  padding-top: 30px;
+  font-size: larger;
+}
